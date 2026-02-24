@@ -280,6 +280,7 @@ services:
     image: openlmis/rsyslog:${OL_RSYSLOG_VERSION}
     volumes:
       - 'syslog:/var/log'
+      - './config/log/logrotate.conf:/etc/logrotate.d/rsyslog'
     depends_on:
       - service-configuration
       - consul
