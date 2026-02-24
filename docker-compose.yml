@@ -29,6 +29,8 @@ services:
     depends_on: [consul]
     mem_limit: '1.3G'
     cpus: 2
+    volumes:
+      - './config/reference-ui/default.conf:/etc/nginx/conf.d/default.conf'
 
   requisition:
     image: openlmis/requisition:${OL_REQUISITION_VERSION}
